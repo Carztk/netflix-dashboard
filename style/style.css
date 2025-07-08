@@ -21,15 +21,18 @@ h1 {
   letter-spacing: 1px;
 }
 
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2rem;
+}
+
 .chart-container {
-  max-width: 900px;
-  margin: 2.5rem auto;
-  padding: 2rem;
   background: #1e1e1e;
+  padding: 2rem;
   border-radius: 14px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .chart-container:hover {
@@ -47,19 +50,18 @@ h1 {
 }
 
 canvas {
-  width: 100%;
-  height: auto;
-}
-
-.chartjs-tooltip {
-  background: #333;
-  color: #fff;
-  font-size: 0.9rem;
+  width: 100% !important;
+  height: auto !important;
 }
 
 .select-wrapper {
   margin-bottom: 1rem;
   text-align: right;
+}
+
+.select-wrapper label {
+  margin-right: 0.5rem;
+  font-weight: 500;
 }
 
 .select-wrapper select {
@@ -77,6 +79,12 @@ canvas {
   border-color: #e50914;
 }
 
+.chartjs-tooltip {
+  background: #333;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
 .analysis-box {
   margin-top: 1.5rem;
   font-size: 0.95rem;
@@ -85,4 +93,10 @@ canvas {
   padding: 1rem 1.2rem;
   border-left: 4px solid #e50914;
   border-radius: 6px;
+}
+
+.chart-analysis {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  color: #ccc;
 }
