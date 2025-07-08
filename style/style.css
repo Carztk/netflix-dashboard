@@ -6,8 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  background: url('https://i.pinimg.com/736x/87/7d/98/877d9881dd046b4127aabac10dd26b01.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #141414;
   color: #ffffff;
   padding: 2rem;
   line-height: 1.6;
@@ -20,30 +19,36 @@ h1 {
   font-weight: bold;
   color: #e50914;
   letter-spacing: 1px;
-  text-shadow: 2px 2px 6px #000;
 }
 
-.dashboard-flex {
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-bottom: 2rem;
+}
+
+.bottom-grid {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .chart-card {
-  background: rgba(30, 30, 30, 0.95);
+  background: #1e1e1e;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  flex: 1 1 420px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 100%;
   max-width: 600px;
-  min-width: 320px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .chart-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
 }
 
 .chart-card h2 {
@@ -51,8 +56,6 @@ h1 {
   margin-bottom: 1rem;
   color: #ffffff;
   font-weight: 600;
-  border-left: 4px solid #e50914;
-  padding-left: 12px;
 }
 
 canvas {
