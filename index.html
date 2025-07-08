@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Dashboard</title>
+  <link rel="stylesheet" href="style/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+</head>
+<body>
+  <h1>Netflix Dashboard</h1>
+
+  <div class="chart-container">
+    <h2>1. Movies vs TV Shows</h2>
+    <canvas id="typeChart"></canvas>
+    <div class="analysis-box">
+  This chart shows a comparison of Movies and TV Shows currently on Netflix.
+</div>
+
+    <p class="chart-analysis">
+      This chart shows the distribution of content types on Netflix. As observed, movies outnumber TV shows.
+    </p>
+  </div>
+
+  <div class="chart-container">
+    <h2>2. Yearly Additions</h2>
+    <label for="typeFilter">Filter by Type:</label>
+    <select id="typeFilter">
+      <option value="All">All</option>
+      <option value="Movie">Movies</option>
+      <option value="TV Show">TV Shows</option>
+    </select>
+    <canvas id="yearChart"></canvas>
+    <div class="analysis-box">
+  This chart shows a comparison of Movies and TV Shows currently on Netflix.
+</div>
+
+    <p class="chart-analysis" id="yearAnalysis">
+      This chart displays how Netflix’s content library has grown each year. The spike around 2018 reflects aggressive content acquisition.
+    </p>
+  </div>
+
+  <div class="chart-container">
+    <h2>3. Top Content Ratings</h2>
+    <canvas id="ratingChart"></canvas>
+    <div class="analysis-box">
+  This chart shows a comparison of Movies and TV Shows currently on Netflix.
+</div>
+
+    <p class="chart-analysis">
+      TV-MA and TV-14 dominate the ratings, suggesting mature content is most prevalent on Netflix.
+    </p>
+  </div>
+
+  <div class="chart-container">
+    <h2>4. Top 10 Genres</h2>
+    <canvas id="genreChart"></canvas>
+    <div class="analysis-box">
+  This chart shows a comparison of Movies and TV Shows currently on Netflix.
+</div>
+
+    <p class="chart-analysis">
+      Documentaries and Dramas are the most popular genres, followed by International titles, showcasing global diversity.
+    </p>
+  </div>
+
+  <div class="chart-container">
+    <h2>5. Top 10 Producing Countries</h2>
+    <canvas id="countryChart"></canvas>
+    <div class="analysis-box">
+  This chart shows a comparison of Movies and TV Shows currently on Netflix.
+</div>
+
+    <p class="chart-analysis">
+      The United States leads as the top producer, followed by India and the UK which; reflecting strong content exports.
+    </p>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
