@@ -3,66 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Netflix Dashboard</title>
+  <title>Home | Netflix Dashboard</title>
   <link rel="stylesheet" href="style/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 <body>
-  <h1>Netflix Dashboard</h1>
+  <nav class="navbar">
+    <div class="logo">Netflix Dashboard</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="summary.html">Dashboard</a></li>
+    </ul>
+  </nav>
 
-  <div class="dashboard-grid">
-    <div class="chart-card">
-      <h2>1. Movies vs TV Shows</h2>
-      <canvas id="typeChart"></canvas>
-      <div class="analysis-box">
-        Movies outnumber TV Shows, indicating Netflix’s heavier investment in films.
-      </div>
-    </div>
+  <h1>Welcome to the Netflix Data Dashboard</h1>
 
-    <div class="chart-card">
-      <h2>2. Yearly Additions</h2>
-      <div class="select-wrapper">
-        <label for="typeFilter">Filter by Type:</label>
-        <select id="typeFilter">
-          <option value="All">All</option>
-          <option value="Movie">Movies</option>
-          <option value="TV Show">TV Shows</option>
-        </select>
-      </div>
-      <canvas id="yearChart"></canvas>
-      <div class="analysis-box" id="yearAnalysis">
-        This chart displays how Netflix’s content library has grown each year.
-      </div>
-    </div>
-
-    <div class="chart-card">
-      <h2>3. Top Content Ratings</h2>
-      <canvas id="ratingChart"></canvas>
-      <div class="analysis-box">
-        TV-MA and TV-14 dominate, indicating Netflix's focus on mature and teen audiences.
-      </div>
-    </div>
+  <div class="chart-card" style="max-width: 900px; margin: auto;">
+    <p>This dashboard provides insights into Netflix's global content library. It includes visual analysis of:</p>
+    <ul style="margin: 1rem 0 1rem 1.5rem;">
+      <li>Distribution between Movies and TV Shows</li>
+      <li>Content added each year</li>
+      <li>Top content ratings by popularity</li>
+      <li>Top genres and producing countries</li>
+    </ul>
+    <p>Click on the Dashboard tab to view the analysis made</p>
   </div>
+  <div class="carousel-container">
+  <div class="carousel-track">
+    <img src="https://image.tmdb.org/t/p/w300/8QVDXDiOGHRcAD4oM6MXjE0osSj.jpg" alt="Extraction 2">
+    <img src="https://m.media-amazon.com/images/M/MV5BYjI0YWJhZTUtMTJhNy00OTEzLThkMjItOThkMmIzMmU4YjliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="One Piece (Live Action)">
+    <img src="https://image.tmdb.org/t/p/w300/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg" alt="The Witcher">
+    <img src="https://image.tmdb.org/t/p/w300/yOm993lsJyPmBodlYjgpPwBjXP9.jpg" alt="Squid Game">
+    <img src="https://m.media-amazon.com/images/M/MV5BZjkxZWJiNTUtYjQwYS00MTBlLTgwODQtM2FkNWMyMjMwOGZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Money Heist">
+    <img src="https://image.tmdb.org/t/p/w300/nGxUxi3PfXDRm7Vg95VBNgNM8yc.jpg" alt="Red Notice">
+    <img src="https://image.tmdb.org/t/p/w300/gPbM0MK8CP8A174rmUwGsADNYKD.jpg" alt="The Gray Man">
 
-  <div class="bottom-grid">
-    <div class="chart-card">
-      <h2>4. Top 10 Genres</h2>
-      <canvas id="genreChart"></canvas>
-      <div class="analysis-box">
-        International Movies, Documentaries, and Dramas lead the way—showcasing diversity and informative storytelling.
-      </div>
-    </div>
-
-    <div class="chart-card">
-      <h2>5. Top 10 Producing Countries</h2>
-      <canvas id="countryChart"></canvas>
-      <div class="analysis-box">
-        The United States leads, followed by India and the UK—highlighting strong global content pipelines.
-      </div>
-    </div>
+    <img src="https://image.tmdb.org/t/p/w300/8QVDXDiOGHRcAD4oM6MXjE0osSj.jpg" alt="Extraction 2">
+    <img src="https://m.media-amazon.com/images/M/MV5BYjI0YWJhZTUtMTJhNy00OTEzLThkMjItOThkMmIzMmU4YjliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="One Piece (Live Action)">
+    <img src="https://image.tmdb.org/t/p/w300/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg" alt="The Witcher">
+    <img src="https://image.tmdb.org/t/p/w300/yOm993lsJyPmBodlYjgpPwBjXP9.jpg" alt="Squid Game">
+    <img src="https://m.media-amazon.com/images/M/MV5BZjkxZWJiNTUtYjQwYS00MTBlLTgwODQtM2FkNWMyMjMwOGZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Money Heist">
   </div>
+</div>
 
-  <script src="scripts/main.js"></script>
+
 </body>
 </html>
