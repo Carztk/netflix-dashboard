@@ -53,21 +53,13 @@ fetch('data/processed_data.json')
           },
           scales: {
             x: {
-              ticks: {
-                color: '#ffffff'
-              },
-              grid: {
-                color: 'rgba(255, 255, 255, 0.1)'
-              }
+              ticks: { color: '#ffffff' },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' }
             },
             y: {
               beginAtZero: true,
-              ticks: {
-                color: '#ffffff'
-              },
-              grid: {
-                color: 'rgba(255, 255, 255, 0.1)'
-              }
+              ticks: { color: '#ffffff' },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' }
             }
           }
         },
@@ -77,53 +69,18 @@ fetch('data/processed_data.json')
       chartRefs[id] = chart;
     };
 
-    createChart(
-      'typeChart',
-      'doughnut',
-      'Content Type',
-      Object.keys(data.type_counts),
-      Object.values(data.type_counts),
-      ['#ff595e', '#1982c4']
-    );
-
-    createChart(
-      'ratingChart',
-      'bar',
-      'Top Ratings',
-      Object.keys(data.ratings),
-      Object.values(data.ratings),
-      '#00b4d8'
-    );
-
-    createChart(
-      'genreChart',
-      'bar',
-      'Top Genres',
-      Object.keys(data.top_genres),
-      Object.values(data.top_genres),
-      '#ffd166'
-    );
-
-    createChart(
-      'countryChart',
-      'bar',
-      'Top Countries',
-      Object.keys(data.top_countries),
-      Object.values(data.top_countries),
-      '#06d6a0'
-    );
+    createChart('typeChart', 'doughnut', 'Content Type', Object.keys(data.type_counts), Object.values(data.type_counts), ['#ff595e', '#1982c4']);
+    createChart('ratingChart', 'bar', 'Top Ratings', Object.keys(data.ratings), Object.values(data.ratings), '#00b4d8');
+    createChart('genreChart', 'bar', 'Top Genres', Object.keys(data.top_genres), Object.values(data.top_genres), '#ffd166');
+    createChart('countryChart', 'bar', 'Top Countries', Object.keys(data.top_countries), Object.values(data.top_countries), '#06d6a0');
 
     const typeFilter = document.getElementById("typeFilter");
     const ctxYear = document.getElementById('yearChart').getContext('2d');
 
     const renderYearChart = (contentType = 'All') => {
-      if (yearlyChart) {
-        yearlyChart.destroy();
-      }
+      if (yearlyChart) yearlyChart.destroy();
 
-      const fullData = contentType === 'All'
-        ? data.yearly_counts_all
-        : data.yearly_by_type[contentType];
+      const fullData = contentType === 'All' ? data.yearly_counts_all : data.yearly_by_type[contentType];
 
       yearlyChart = new Chart(ctxYear, {
         type: 'line',
@@ -143,9 +100,7 @@ fetch('data/processed_data.json')
           plugins: {
             legend: {
               display: true,
-              labels: {
-                color: '#ffffff'
-              }
+              labels: { color: '#ffffff' }
             },
             tooltip: {
               enabled: true,
@@ -162,21 +117,13 @@ fetch('data/processed_data.json')
           },
           scales: {
             x: {
-              ticks: {
-                color: '#ffffff'
-              },
-              grid: {
-                color: 'rgba(255,255,255,0.1)'
-              }
+              ticks: { color: '#ffffff' },
+              grid: { color: 'rgba(255,255,255,0.1)' }
             },
             y: {
               beginAtZero: true,
-              ticks: {
-                color: '#ffffff'
-              },
-              grid: {
-                color: 'rgba(255,255,255,0.1)'
-              }
+              ticks: { color: '#ffffff' },
+              grid: { color: 'rgba(255,255,255,0.1)' }
             }
           }
         },
