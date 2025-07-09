@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Netflix Summary</title>
+  <link rel="stylesheet" href="style/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Netflix Dashboard</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="summary.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <h1>Netflix Content Summary</h1>
+
+  <div class="dashboard-grid">
+    <div class="chart-card">
+      <h2>1. Movies vs TV Shows</h2>
+      <canvas id="typeChart"></canvas>
+      <div class="analysis-box">
+        Movies outnumber TV Shows, indicating Netflix’s heavier investment in films.
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h2>2. Yearly Additions</h2>
+      <div class="select-wrapper">
+        <label for="typeFilter">Filter by Type:</label>
+        <select id="typeFilter">
+          <option value="All">All</option>
+          <option value="Movie">Movies</option>
+          <option value="TV Show">TV Shows</option>
+        </select>
+      </div>
+      <canvas id="yearChart"></canvas>
+      <div class="analysis-box" id="yearAnalysis">
+        This chart displays how Netflix’s content library has grown each year.
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h2>3. Top Content Ratings</h2>
+      <canvas id="ratingChart"></canvas>
+      <div class="analysis-box">
+        TV-MA and TV-14 dominate, indicating Netflix's focus on mature and teen audiences.
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="chart-card">
+      <h2>4. Top 10 Genres</h2>
+      <canvas id="genreChart"></canvas>
+      <div class="analysis-box">
+        International Movies, Documentaries, and Dramas lead the way—showcasing diversity and informative storytelling.
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h2>5. Top 10 Producing Countries</h2>
+      <canvas id="countryChart"></canvas>
+      <div class="analysis-box">
+        The United States leads, followed by India and the UK—highlighting strong global content pipelines.
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
