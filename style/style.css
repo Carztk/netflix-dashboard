@@ -157,6 +157,10 @@ canvas {
   transform: scale(1.08);
 }
 
+.shift-down canvas {
+  margin-top: 5rem;
+}
+
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
