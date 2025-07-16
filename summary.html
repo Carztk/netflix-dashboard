@@ -12,9 +12,10 @@
   <nav class="navbar">
     <div class="logo">Netflix Dashboard</div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="summary.html">Dashboard</a></li>
-    </ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="summary.html">Dashboard</a></li>
+  <li><a href="regression.html">Regression</a></li>   <!-- NEW -->
+</ul>
   </nav>
   <!-- <h1>Netflix Content Summary</h1> -->
 
@@ -53,7 +54,7 @@
   </div>
 
   <div class="bottom-grid">
-    <div class="chart-card">
+    <div class="chart-card shift-down">
       <h2>4. Top 10 Genres</h2>
       <canvas id="genreChart"></canvas>
       <div class="analysis-box">
@@ -61,15 +62,44 @@
       </div>
     </div>
 
-    <div class="chart-card">
+    <div class="chart-card shift-down">
       <h2>5. Top 10 Producing Countries</h2>
       <canvas id="countryChart"></canvas>
       <div class="analysis-box">
         The United States leads, followed by India and the UK—highlighting strong global content pipelines.
       </div>
     </div>
+
+  <div class="chart-card">
+    <h2>6. Monthly Additions</h2>
+    <canvas id="monthChart"></canvas>
+    <div class="analysis-box">
+        Most titles were added between July and October, indicating a potential content release peak in the second half of the year.
+      </div>
   </div>
 
+  <div class="chart-card">
+    <h2>7. Movie Runtime Bins</h2>
+    <canvas id="runtimeChart"></canvas>
+    <div class="analysis-box">
+        The majority of Netflix movies have runtimes between 60–90 minutes and 90–120 minutes, showing a preference for standard feature-length films.
+      </div>
+  </div>
+
+  <div class="chart-card">
+    <h2>8. Top 10 Directors</h2>
+    <canvas id="directorChart"></canvas>
+    <div class="analysis-box">
+        These top directors have 10 or more titles on the platform, showing they are either highly prolific or consistently favored by Netflix for content acquisition.
+      </div>
+  </div>
+</div>
+</div>
+
   <script src="scripts/main.js"></script>
+  <footer class="footer">
+  <p>Germones, Caido, Cortan, Gemino &nbsp; • &nbsp; IT0075</p>
+</footer>
+
 </body>
 </html>
