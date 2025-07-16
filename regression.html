@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Regression | Netflix Dashboard</title>
+  <link rel="stylesheet" href="style/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Netflix Dashboard</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="summary.html">Dashboard</a></li>
+      <li><a href="regression.html">Regression</a></li>
+    </ul>
+  </nav>
+
+  <div class="chart-card" style="max-width:900px;margin:auto">
+    <h2>Yearly Additions & Linear Trend</h2>
+    <label style="font-size:.9rem">
+      <input type="checkbox" id="trendToggle" checked> Show Trend Line
+    </label>
+    <canvas id="regChart"></canvas>
+  </div>
+
+  <script>
+  fetch('data/processed_data.json')
+    .then(r=>r.json())
+    .then(d=>{
+      const ctx=document.getElementById('regChart').getContext('2d');
+      const years = Object.keys(d.yearly_counts_all).map(y=>+y);
+      const counts= Object.values(d.yearly_counts_all);
+      const predict=years.map(y=>d.reg_intercept + d.reg_coef*y);
+
+      const chart=new Chart(ctx,{
+        type:'line',
+        data:{
+          labels:years,
+          datasets:[
+            {label:'Actual',data:counts,borderColor:'#6a4c93',backgroundColor:'#6a4c93',tension:.3},
+            {label:'Linear Trend',data:predict,borderColor:'#ffa600',backgroundColor:'#ffa600',
+             borderDash:[6,6],tension:0}
+          ]
+        },
+        options:{
+          responsive:true,
+          plugins:{legend:{labels:{color:'#fff'}},
+            tooltip:{callbacks:{label:c=>`${c.label}: ${c.parsed.y} titles`}}},
+          scales:{x:{ticks:{color:'#fff'}},y:{beginAtZero:true,ticks:{color:'#fff'}}}
+        }
+      });
+
+      document.getElementById('trendToggle')
+        .addEventListener('change',e=>{
+          chart.data.datasets[1].hidden=!e.target.checked;
+          chart.update();
+        });
+    });
+  </script>
+  <footer class="footer">
+  <p>Germones, Caido, Cortan, Gemino &nbsp; • &nbsp; IT0075</p>
+</footer>
+
+</body>
+</html>
